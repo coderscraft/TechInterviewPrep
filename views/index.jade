@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to the Admin Page of Interview Questions Management App
+                 
+      #tabs
+         ul
+           li: a(href="#tabs-1") Create Question
+           li: a(href="#tabs-2") Modify Question
+           li: a(href="#tabs-3") Delete Quesstion
+           li: a(href="#tabs-4") View Quesstions
+         #tabs-1
+           #createQuestion
+            fieldset
+                table
+                   tr
+                      td
+                         span Question Id :
+                      td
+                         input#inputId(type='text')
+                   tr
+                      td
+                         span Date :
+                      td
+                         input#inputId(type='text')      
+                   tr 
+                      td 
+                         span Category :
+                      td 
+                         select
+                              each category, i in categories
+                                 option(value=i) #{category} 
+                   tr
+                      td 
+                         span Level :
+                      td 
+                         select
+                              each level, i in levels
+                                 option(value=i) #{level} 
+                   tr
+                      td 
+                         span Question :
+                      td 
+                         textarea#textAreaQuestion( rows:20 )
+                   tr
+                      td 
+                         span Answer :
+                      td 
+                         textarea#textAreaAnswer(rows:20 )
+                   tr
+                      td 
+                         button#btnAddQuestion Add Question
+                      td
+         #tabs-2
+           p Modifying Question
+         #tabs-3
+           p Deleting Question           
+         #tabs-4
+           p View Questions
