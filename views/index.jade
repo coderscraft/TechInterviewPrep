@@ -18,26 +18,26 @@ block content
                       td
                          span Question Id :
                       td
-                         input#inputId(type='text')
+                         input#questionId(type='text')
                    tr
                       td
                          span Date :
                       td
-                         input#inputId(type='text')      
+                         input#postDate(type='text')      
                    tr 
                       td 
                          span Category :
                       td 
-                         select
-                              each category, i in categories
-                                 option(value=i) #{category} 
+                         select#category
+                              each category in categories
+                                 option(value=category.toLowerCase()) #{category} 
                    tr
                       td 
                          span Level :
                       td 
-                         select
-                              each level, i in levels
-                                 option(value=i) #{level} 
+                         select#level
+                              each level in levels
+                                 option(value=level.toLowerCase()) #{level} 
                    tr
                       td 
                          span Question :
